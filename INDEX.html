@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To Ell,</h1>
+        <p>please enter password to proceed:</p>
+        <form id="passwordForm" onsubmit="return checkPassword()">
+            <input type="password" id="password" placeholder="Enter Your Birthday" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="error" class="error"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const error = document.getElementById('error');
+
+            if (password === '12152005') {
+                window.location.href = 'secondpage.html';
+                return false;
+            } else {
+                error.textContent = 'Incorrect password. Please try again!';
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
+
