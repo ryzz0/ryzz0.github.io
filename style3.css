@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(3rdbg.gif);
+    background-size: 155%;
+    font-family: Arial, sans-serif;
+}
+
+.birthday-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4em;
+    color: #7e00ec;
+    text-shadow: 3px 4px 1px rgb(3, 14, 75);
+    -webkit-text-stroke: 2px #dd0ae0;
+    margin-bottom:50px;
+}
+
+.book-container {
+    width: 350px;
+    height: 500px;
+    position: center;
+    perspective: 1000px;
+}
+
+.book {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('Screenshot_20241015_171135_Gallery.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    border: 10px solid #4d1170;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+    transform-origin: left;
+    transition: transform 0.5s;
+    z-index: 2;
+}
+
+
+.book-container:hover .book-cover {
+    transform: rotateY(-120deg);
+}
+
+.book-page {
+    width: 100%;
+    height: 100%;
+    background-image: url('card.jpg'); 
+    background-size: cover;
+    background-position: center;
+    border: 10px solid #050f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: #333;
+    z-index: 1;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    background-color: #8e4eb0;
+    color: white;
+    border: 2px solid #4d1170;
+    cursor: pointer;
+    margin: 20px auto;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.4s ease-in-out;
+}
+
+button:hover {
+    background-color: #4d1170;
+    color: #ff7eb9;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: translateX(-50%) scale(1.1);
+}
+
+button:active {
+    transform: translateX(-50%) scale(1);
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff7eb9, #8e4eb0);
+    z-index: -1;
+    border-radius: 25px;
+    transform: scale(0);
+    transition: transform 0.4s ease-in-out;
+}
+
+button:hover::before {
+    transform: scale(1);
+}
