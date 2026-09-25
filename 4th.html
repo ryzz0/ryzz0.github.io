@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(4thbg.gif);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .content {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 2em;
+            font-family: 'Dancing Script', cursive;
+            color: #9da5dc;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .video {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgb(22, 13, 44);
+            margin-bottom: 80px;
+        }
+
+        .back-btn {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #06021f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px; /* Space between button and content above */
+        }
+
+        .back-btn:hover {
+            background-color: #4d1170;
+        }
+
+        .back-btn:active {
+            background-color: #6c3b8d;
+            transform: scale(0.98);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            position: absolute;
+            bottom: 50px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 class="title">US:></h1>
+
+        <video class="video" controls>
+            <source src="us.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="button-container">
+        <button class="back-btn" onclick="window.history.back()">↻</button>
+    </div>
+</body>
+</html>
